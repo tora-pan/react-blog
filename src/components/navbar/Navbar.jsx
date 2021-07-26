@@ -1,8 +1,6 @@
 import './navbar.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCodepen, faGithub, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons"
-
-import React from 'react'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
@@ -22,6 +20,7 @@ const Navbar = () => {
                     <a href="#"><li className="nav--item">CONTACT</li></a>
                     <a href="#"><li className="nav--item">WRITE</li></a>
                     <a href="#"><li className="nav--item">LOGOUT</li></a>
+                    
                 </ul>
             </div>
             <div className="nav--right">
