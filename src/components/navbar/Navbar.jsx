@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   //testing
-  const user = true;
+  const user = false;
   return (
     <div className="nav">
       <div className="nav--left">

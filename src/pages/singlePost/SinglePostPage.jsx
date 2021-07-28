@@ -7,7 +7,7 @@ import React from "react";
 const SinglePost = () => {
   return (
     <div className="singlePostPage">
-      {/* post */}
+      loaded
       <PostDetail />
       <Sidebar />
     </div>

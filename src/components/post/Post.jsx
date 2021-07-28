@@ -1,6 +1,7 @@
 import "./post.css";
 
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Post = () => {
   return (
@@ -16,7 +17,9 @@ const Post = () => {
           <span className="postCat">Lifestyle</span>
         </div>
         <span className="postTitle">
+          <Link to="/post/1" className="link">
           Lorem ipsum dolor sit amet consectetur
+          </Link>
         </span>
         <hr />
         <span className="postDate">1 hour ago</span>
