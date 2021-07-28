@@ -1,4 +1,4 @@
-.login {
+.register {
   height: calc(100vh - 50px);
   display: flex;
   flex-direction: column;
@@ -8,48 +8,48 @@
       rgba(255, 255, 255, 0.4),
       rgba(255, 255, 255, 0.4)
     ),
-    url("https://images.pexels.com/photos/4195410/pexels-photo-4195410.jpeg?cs=srgb&dl=pexels-karolina-grabowska-4195410.jpg&fm=jpg");
+    url("https://images.pexels.com/photos/4065864/pexels-photo-4065864.jpeg?cs=srgb&dl=pexels-cottonbro-4065864.jpg&fm=jpg");
   background-size: cover;
 }
 
-.loginTitle {
+.registerTitle {
   font-size: 50px;
 }
 
-.loginForm {
+.registerForm {
   display: flex;
   flex-direction: column;
 
   margin-top: 20px;
 }
 
-.loginForm > label {
+.registerForm > label {
   margin: 10px 0;
 }
 
-.loginInput {
+.registerInput {
   padding: 10px;
   background-color: #fff;
   border: none;
 }
 
-.loginButton {
+.registerButton {
   margin-top: 20px;
   cursor: pointer;
-  background-color: lightcoral;
+  background-color: teal;
   border: none;
   color: white;
   border-radius: 5px;
   padding: 10px;
 }
 
-.loginRegisterButton {
+.registerLoginButton {
   position: absolute;
   top: 60px;
   right: 20px;
   margin-top: 20px;
   cursor: pointer;
-  background-color: teal;
+  background-color: lightcoral;
   border: none;
   color: white;
   border-radius: 5px;
