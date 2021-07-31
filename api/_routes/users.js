@@ -32,7 +32,7 @@ router.delete("/:id", async (req, res) => {
       try {
         await Post.deleteMany({ username: user.username });
         await User.findByIdAndDelete(req.params.id);
-        req.status(200).json("user has been deleted");
+        res.status(200).json("user has been deleted");
       } catch (err) {
         res.status(500).json(err);
       }

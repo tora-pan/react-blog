@@ -4,12 +4,9 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const authRoute = require("./_routes/authentication");
 const userRoute = require("./_routes/users");
-const bodyParser = require("body-parser");
 
 dotenv.config();
 app.use(express.json());
-app.use(express.urlencoded());
-//app.use(express.bodyParser());
 
 mongoose
   .connect(process.env.MONGO_DB_URL, {
