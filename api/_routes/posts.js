@@ -42,34 +42,54 @@ router.put("/:id", async (req, res) => {
 
 //Delete Post
 router.delete("/:id", async (req, res) => {
-  if (req.body.userId === req.params.id) {
-    try {
-      const user = await User.findById(req.params.id);
-      console.log(user);
+  try {
+    const post = await Post.findById(req.params.id);
+    if (post.username === req.body.username) {
+      //user is the same so you can delete
       try {
-        await Post.deleteMany({ username: user.username });
-        await User.findByIdAndDelete(req.params.id);
-        res.status(200).json("user has been deleted");
+        await post.delete();
+        res.status(200).json("Post has been deleted");
       } catch (err) {
         res.status(500).json(err);
       }
-    } catch (err) {
-      res.status(404).json("user not found");
+    } else {
+      res.status(401).json("you are not allowed to update someone else's post");
     }
-  } else {
-    res.status(401).json("You can only delete your account");
+  } catch (err) {
+    status(500).json(err);
   }
 });
 
 //Get Post
 router.get("/:id", async (req, res) => {
   try {
-    const user = await User.findById(req.params.id);
-    //destructure response to leave out password
-    const { password, ...others } = user._doc;
-    res.status(200).json(others);
+    const post = await Post.findById(req.params.id);
+    res.status(200).json(post);
   } catch (err) {
     res.status(500).json(err);
+  }
+});
+
+//Get All Posts
+router.get("/", async (req, res) => {
+  const username = req.query.user;
+  const category = req.query.cat;
+  try {
+    let posts;
+    if (username) {
+      posts = await Post.find({ username});
+    } else if (category) {
+      posts = await Post.find({
+        categories: {
+          $in: [category],
+        },
+      });
+    } else {
+      posts = await Post.find();
+    }
+    res.status(200).json(posts);
+  } catch (err) {
+    status(500).json(err);
   }
 });
 
